@@ -1,0 +1,5 @@
+.DS_Store
+thumbs.db
+*.log
+.idea/
+node_modules/

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WebSocket</title>
+  <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container-fluid pt-3 pb-3">
+  <div class="form-group">
+    <label for="textarea-message">Message</label>
+    <textarea id="textarea-message" rows="3" placeholder="Enter Message" class="form-control"></textarea>
+  </div>
+  <a id="btn-send" class="btn btn-primary btn-block" href="#" role="button">Send</a>
+  <div class="mt-3 alert alert-dark small" role="alert">Message<br/><span id="result-message"></span></div>
+</div>
+<script>
+  var host = location.hostname;
+  var ws = new WebSocket('ws://' + host + ':8080');
+
+  var $textareaMessage = document.querySelector('#textarea-message');
+  var $btnSend = document.querySelector('#btn-send');
+  var $resultMessage = document.querySelector('#result-message');
+  var sendMessage = function(value) {
+    ws.send(value);
+    $textareaMessage.value = '';
+    $textareaMessage.focus();
+  }
+
+  $textareaMessage.addEventListener('keydown', function (e) {
+    if ((e.which == 13 || e.keyCode == 13) && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault();
+      var value = $textareaMessage.value.trim();
+      if(value === '') return;
+      sendMessage(value);
+    }
+  });
+
+  $btnSend.addEventListener('click', function(e) {
+    e.preventDefault();
+    var value = $textareaMessage.value.trim();
+    if(value === '') return;
+    sendMessage(value);
+  });
+
+  ws.onmessage = function(e) {
+    var message = e.data.replace(/\n|\r\n|\r/g, '<br/>');
+    $resultMessage.innerHTML = message;
+  }
+</script>
+</body>
+</html>
