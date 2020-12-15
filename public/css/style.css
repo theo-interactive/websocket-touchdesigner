@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&family=Playfair+Display&display=swap');
+body { font-family: 'Noto Serif KR', serif; } p { font-family: 'Playfair Display', serif; }
+
+body {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  background-color: rgb(0, 21, 61);
+  align-items: center;
+  }
+body {
+  font-size: 7px; }
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  margin-bottom: 10px;
+}
+#letter img {
+  margin-bottom: 30px;
+  width: 100%;
+  position: relative;
+}
+#main_visual{
+
+  text-align: center;
+}
+#visual_text1{
+  font-size: 1.3rem;
+  letter-spacing: -0.05rem;
+  opacity: 40%;
+}
+#visual_text2{
+  font-size: 2rem;
+  letter-spacing: -0.1rem;
+  margin-top: 10px;
+  margin-bottom: 70px;
+}
+
+.form {
+  width: 100%;
+  position: relative;
+  height: 50px;
+  align-items: center;
+  color: rgb(0, 21, 61);
+  padding: 15px 0px 45px;
+  margin: 8px 0;
+  border-bottom: 1px solid white;
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+}
+
+.form textarea {
+  width: 70%;
+  height: 180%;
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: -0.03rem;
+  text-align: center;
+  padding-top: 1rem;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: 'Playfair Display', serif;
+}
+
+.form label {
+  position: absolute;
+  left: 0%;
+  width: 100%;
+  height: 150%;
+  color: #595f6e;
+  pointer-events: none;
+}
+/*.form label::after {*/
+/*  content: "";*/
+/*  position: absolute;*/
+/*  left: 0px;*/
+/*  bottom: -1px;*/
+/*  height: 100%;*/
+/*  width: 100%;*/
+/*  border-bottom: 5px solid rgb(0, 21, 61);*/
+/*}*/
+
+.form label .content-name {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  color: white;
+  opacity: 40%;
+}
+
+.form button {
+  width: 50%;
+  height: 120%;
+  margin-top: 30px;
+  font-size: 1rem;
+  background-color: brown;
+  color: white;
+  border-radius: 50px;
+  font-family: 'Playfair Display', serif;
+}
+
+#footer {
+  margin-top: 400px;
+  opacity: 10%;
+  font-size: 3px;
+  font-family: 'Playfair Display', serif;
+}
+
+textarea{resize:none}

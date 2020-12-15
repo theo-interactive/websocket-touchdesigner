@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1225번가의 기적</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .full-screen{
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+    }
+    .full-screen video{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .link-block{
+      display:block;
+      position:absolute;
+      z-index:1000;
+      top:0;
+      right:0;
+      bottom:0;
+      left:0;
+    }
+  </style>
+</head>
+<body id="wrap">
+<div class="full-screen">
+  <a href="/home" class="link-block">&nbsp;</a>
+  <video id="video" width="auto" height="100%" autoplay>
+    <source src="/assets/video/christmas.mp4" type="video/mp4">
+    <source src="/assets/video/christmas.ogv" type="video/ogv">
+    <source src="/assets/video/christmas.webm" type="video/webm">
+    <strong>Your browser does not support the video tag.</strong>
+  </video>
+</div>
+</body>
+</html>
